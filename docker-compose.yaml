@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+  app:
+    image: imdb-1.0.0
+    ports:
+      - 3200:3200
+    environment:
+      - host=postgres
+      - user=postgres
+      - password=test1234
+      - dbname=imdb
+  postgres:
+    image: postgres
+    volumes:
+      - /home/gumartinez/postgres-docker:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=test1234

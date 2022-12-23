@@ -2,6 +2,7 @@ package app
 
 import (
 	"fmt"
+	"os"
 
 	"github.com/guzmanmo/go-imdb/internal/app/repository"
 	"gorm.io/driver/postgres"
@@ -17,7 +18,7 @@ func SetUpConnection() *gorm.DB {
 }
 
 func connectToDatabase() {
-	dsn := "host=localhost user=postgres password=test1234 dbname=imdb port=5432 sslmode=disable"
+	dsn := "host=" + os.Getenv("host") + " user=" + os.Getenv("user") + " password=" + os.Getenv("password") + " dbname=" + os.Getenv("dbname") + " port=5432 sslmode=disable"
 	var err error
 	DbConnection, err = gorm.Open(postgres.Open(dsn), &gorm.Config{})
 	if err != nil {

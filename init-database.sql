@@ -1,0 +1,3 @@
+CREATE DATABASE IF NOT EXISTS imdb;
+
+USE imdb;
