@@ -10,12 +10,9 @@ import (
 	"testing"
 
 	"github.com/gin-gonic/gin"
-	"github.com/gorilla/mux"
 	"github.com/guzmanmo/go-imdb/internal/app/repository"
 	"github.com/stretchr/testify/assert"
 )
-
-var router *mux.Router
 
 type mockService struct {
 }
